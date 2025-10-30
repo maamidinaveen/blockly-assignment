@@ -23,14 +23,6 @@ Frontend
 
 🧮 Linear interpolation (lerp) for smooth animation
 
-Backend
-
-🟢 Node.js with Express.js
-
-📂 File-based JSON data (dummy-route.json)
-
-🌐 CORS enabled for local development
-
 👇
 📁 Final Project Structure — vehicle-tracker-app/
 
@@ -52,8 +44,6 @@ vehicle-tracker-app/
 │ ├── index.css # Global and Tailwind styles
 │ └── Utils.js # Helper functions (e.g., calculateSpeedKmH)
 │
-├── optional-backend/
-│ └── server.js # Node + Express backend (serves /api/route)
 │
 ├── package.json # React app dependencies and scripts
 ├── tailwind.config.js # Tailwind CSS configuration
@@ -61,24 +51,12 @@ vehicle-tracker-app/
 ├── README.md # Documentation and setup guide
 └── .gitignore # Files/folders ignored by Git
 
-Install dependencies
-
-Backend
-
-cd Optional-Backend
-
-npm install
-
 frontend
 
 npm install
 
 🚀 Running the Project
-Step 1: Start the Backend Server
-cd Optional-Backend - node server.js
-Server will start on http://localhost:3001
-
-Step 2: Start the Frontend
+Step 1: Start the Frontend
 cd
 npm start
 Frontend will start on http://localhost:3000
