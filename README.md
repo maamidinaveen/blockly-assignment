@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+🚗 Vehicle Movement Simulation App
+🧭 Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project simulates a vehicle’s movement along a predefined route on an interactive map using React Leaflet.
+It shows both:
 
-## Available Scripts
+The entire route path (from start to end), and
 
-In the project directory, you can run:
+The vehicle’s live position, smoothly moving along the route.
 
-### `npm start`
+The backend serves dummy GPS data using Express.js, and the frontend visualizes it in real-time.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🧰 Tech Stack
+Frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+⚛️ React.js
 
-### `npm test`
+🗺️ React-Leaflet (for map rendering)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🧭 Leaflet.js (map engine)
 
-### `npm run build`
+💨 Tailwind CSS (optional styling)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🧮 Linear interpolation (lerp) for smooth animation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🟢 Node.js with Express.js
 
-### `npm run eject`
+📂 File-based JSON data (dummy-route.json)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🌐 CORS enabled for local development
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👇
+📁 Final Project Structure — vehicle-tracker-app/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+vehicle-tracker-app/
+├── node_modules/ # Installed dependencies
+│
+├── public/
+│ ├── dummy-route.json # Static route data file for frontend
+│ └── index.html # Main HTML entry for React app
+│
+├── src/
+│ ├── components/
+│ │ ├── AnimatedMarker.jsx # Handles smooth vehicle marker animation
+│ │ ├── Controls.jsx # UI controls (Play, Pause, Reset)
+│ │ └── VehicleMap.jsx # Core map + route + animation logic
+│ │
+│ ├── App.jsx # Main wrapper component
+│ ├── index.js # ReactDOM entry point
+│ ├── index.css # Global and Tailwind styles
+│ └── Utils.js # Helper functions (e.g., calculateSpeedKmH)
+│
+├── optional-backend/
+│ └── server.js # Node + Express backend (serves /api/route)
+│
+├── package.json # React app dependencies and scripts
+├── tailwind.config.js # Tailwind CSS configuration
+├── postcss.config.js # Tailwind/PostCSS setup (if used)
+├── README.md # Documentation and setup guide
+└── .gitignore # Files/folders ignored by Git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Install dependencies
 
-## Learn More
+Backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd Optional-Backend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install
 
-### Code Splitting
+frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm install
 
-### Analyzing the Bundle Size
+🚀 Running the Project
+Step 1: Start the Backend Server
+cd Optional-Backend - node server.js
+Server will start on http://localhost:3001
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Step 2: Start the Frontend
+cd
+npm start
+Frontend will start on http://localhost:3000
 
-### Making a Progressive Web App
+🗺️ Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+✅ Interactive Map with React Leaflet
+✅ Shows entire route path and vehicle’s traveled path
+✅ Smooth vehicle animation between GPS points
+✅ Fetches route data from Express backend
+✅ Simple & beginner-friendly structure
+✅ Realistic simulation effect (uses requestAnimationFrame for animation)

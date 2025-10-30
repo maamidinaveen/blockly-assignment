@@ -1,0 +1,28 @@
+/* html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  background: #e5e5e5;
+}
+
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-shadow-pane,
+.leaflet-popup-pane,
+.leaflet-overlay-pane,
+.leaflet-map-pane {
+  transform: none !important;
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
