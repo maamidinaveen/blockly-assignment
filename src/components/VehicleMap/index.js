@@ -33,9 +33,8 @@ function VehicleMap() {
     const loadData = async () => {
       try {
         // Fetching from the public directory
-        const response = await fetch("http://localhost:3001/api/route");
+        const response = await fetch("/dummy-route.json");
         const data = await response.json();
-        console.log(data);
 
         // Transform data into Leaflet/React-Leaflet format: [lat, lng]
         setRouteData(
